@@ -1,0 +1,60 @@
+class Smartphone {
+  
+  String brand;
+  String model;
+  
+  
+  int _batteryLevel; 
+
+  
+  Smartphone(this.brand, this.model, this._batteryLevel);
+
+  
+  int get batteryLevel => _batteryLevel;
+
+  
+  set batteryLevel(int currentLevel) {
+    if (currentLevel >= 0 && currentLevel <= 100) {
+      _batteryLevel = currentLevel;
+    }
+  }
+
+  
+  void makeCall(String contactName) {
+    if (_batteryLevel > 5) {
+      print("Calling $contactName from your $brand $model...");
+      _batteryLevel -= 5; // Using the phone drains battery
+    } else {
+      print("Cannot make call. Battery is too low ($_batteryLevel%)!");
+    }
+  }
+}
+
+
+void main() {
+  
+  List<Smartphone> phoneInventory = [];
+
+  
+  Smartphone phone1 = Smartphone("Apple", "iPhone 15", 85);
+  Smartphone phone2 = Smartphone("Samsung", "Galaxy S24", 4);
+
+  
+  phoneInventory.add(phone1);
+  phoneInventory.add(phone2);
+
+  
+  print("--- Testing Phone 1 ---");
+  print("Phone 1: ${phone1.brand} ${phone1.model}");
+  phone1.makeCall("Alex");
+  print("Remaining battery: ${phone1.batteryLevel}%\n");
+
+  print("--- Testing Phone 2 ---");
+  print("Phone 2: ${phone2.brand} ${phone2.model}");
+  phone2.makeCall("Jordan"); 
+  
+  print("\n--- Recharging Phone 2 ---");
+  phone2.batteryLevel = 50; 
+  print("New battery level: ${phone2.batteryLevel}%");
+  phone2.makeCall("Jordan"); 
+}
