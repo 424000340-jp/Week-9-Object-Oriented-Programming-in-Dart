@@ -1,0 +1,12 @@
+--- Testing Phone 1 ---
+Phone 1: Apple iPhone 15
+Calling Alex from your Apple iPhone 15...
+Remaining battery: 80%
+
+--- Testing Phone 2 ---
+Phone 2: Samsung Galaxy S24
+Cannot make call. Battery is too low (4%)!
+
+--- Recharging Phone 2 ---
+New battery level: 50%
+Calling Jordan from your Samsung Galaxy S24
